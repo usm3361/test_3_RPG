@@ -42,6 +42,7 @@ class Game:
         miss = True
         while miss:
             pl_dice = self.roll_dice(6)
+            print(pl_dice)
             result_player = player.speed + pl_dice
             mon_dice = self.roll_dice(6)
             result_monster = monster.speed + mon_dice

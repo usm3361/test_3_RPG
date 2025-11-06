@@ -13,11 +13,15 @@ class Player:
         print(f"{self.name} coming to attack!!")
     
     def attack(self, monster):
+        self.speak()
         impact = False
         
-        player_dice = self.roll_dice(20)  
+        player_dice = self.roll_dice(20)
+        print(f"result dice: {player_dice}")  
         result_player =  self.speed + player_dice
+        print(f"result speed: {result_player}")
         if result_player > monster.armor_rating:
+            print(f"armor monster: {monster.armor_rating}")
             print("Successful hit")
             impact = True
             

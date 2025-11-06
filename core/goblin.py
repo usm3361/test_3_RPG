@@ -13,11 +13,15 @@ class Goblin:
         print(f"Beware, `{self.type} {self.name}` is coming!!")
         
     def attack(self, player):
+        self.speak()
         impact = False
         
-        goblin_dice = self.roll_dice(20)  
-        result_goblin = self.speed + goblin_dice      
+        goblin_dice = self.roll_dice(20) 
+        print(f"result dice: {goblin_dice}")
+        result_goblin = self.speed + goblin_dice 
+        print(f"result speed: {result_goblin}")     
         if result_goblin > player.armor_rating:
+            print(f"armor player: {player.armor_rating}")
             print("Successful hit")
             impact = True
             damage =  self.roll_dice(6) + self.power
