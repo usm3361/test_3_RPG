@@ -39,18 +39,22 @@ class Game:
             return g1
     
     def battle(self, player, monster):
-        
-        pl_dice = self.roll_dice(6)
-        result_player = player.speed + pl_dice
-        mon_dice = self.roll_dice(6)
-        result_monster = monster.speed + mon_dice
-        
-        if result_player == result_monster:
-            player.attack(monster)
-        elif result_player > result_monster:
-            player.attack(monster)
-        elif result_player < result_monster:
-            monster.attack(player)
+        miss = True
+        while miss:
+            pl_dice = self.roll_dice(6)
+            result_player = player.speed + pl_dice
+            mon_dice = self.roll_dice(6)
+            result_monster = monster.speed + mon_dice
+            
+            if result_player == result_monster:
+                player.attack(monster)
+            elif result_player > result_monster:
+                player.attack(monster)
+            elif result_player < result_monster:
+                monster.attack(player)
+                
+            if player.hp < 0 or monster.hp < 0:
+                miss = False
         
         
     def roll_dice(self, sides):
