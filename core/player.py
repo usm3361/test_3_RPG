@@ -11,6 +11,7 @@ class Player:
         
     def speak(self):
         print(f"{self.name} coming to attack!!")
+        print()
     
     def attack(self, monster):
         self.speak()
@@ -23,6 +24,7 @@ class Player:
         if result_player > monster.armor_rating:
             print(f"armor monster: {monster.armor_rating}")
             print("Successful hit")
+            print()
             impact = True
             
         damage =  self.roll_dice(6) + self.power
@@ -34,4 +36,4 @@ class Player:
         return impact
 
     def roll_dice(self, sides):
-        return random.randint(0, sides)        
+        return random.randint(1, sides)        

@@ -27,10 +27,16 @@ class Goblin:
             damage =  self.roll_dice(6) + self.power
             if self.weapon == "knife":
                 damage = damage * 0.5
+                print(f"The damage is: {damage}")
+                print()
             elif self.weapon == "sword":
                 damage = damage * 1
+                print(f"The damage is: {damage}")
+                print()
             elif self.weapon == "axe":
                 damage = damage * 1.5
+                print(f"The damage is: {damage}")
+                print()
             
             player.hp -= damage
             if player.hp <= 0:
@@ -40,5 +46,5 @@ class Goblin:
         return impact
     
     def roll_dice(self, sides):
-        return random.randint(0, sides)        
+        return random.randint(1, sides)        
   
